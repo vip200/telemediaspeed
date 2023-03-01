@@ -23,12 +23,12 @@ def get_shortlink(url):
    return shortlink
 @StreamBot.on_message(filters.private & (filters.document | filters.video | filters.audio) & ~filters.edited, group=4)
 async def private_receive_handler(c: Client, m: Message):
-    if not await db.is_user_exist(m.from_user.id):
-        await db.add_user(m.from_user.id)
-        await c.send_message(
-            Var.BIN_CHANNEL,
-            f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\n Nᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
-        )
+    # if not await db.is_user_exist(m.from_user.id):
+        # await db.add_user(m.from_user.id)
+        # await c.send_message(
+            # Var.BIN_CHANNEL,
+            # f"Nᴇᴡ Usᴇʀ Jᴏɪɴᴇᴅ : \n\n Nᴀᴍᴇ : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Sᴛᴀʀᴛᴇᴅ Yᴏᴜʀ Bᴏᴛ !!"
+        # )
     if Var.UPDATES_CHANNEL != "None":
         try:
             user = await c.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
