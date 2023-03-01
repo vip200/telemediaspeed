@@ -15,7 +15,7 @@ class Var(object):
     WORKERS = int(getenv('WORKERS', '4'))
     BIN_CHANNEL = -1001497492623
     PORT = int(getenv('PORT', 8080))
-    BIND_ADRESS = 'https://telemediaspeed.herokuapp.com'#str(getenv('WEB_SERVER_BIND_ADDRESS', 'https://telemediaspeed.herokuapp.com'))
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     OWNER_ID = int(getenv('OWNER_ID', '384403734'))
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
@@ -25,7 +25,7 @@ class Var(object):
         APP_NAME = 'telemediaspeed'
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
+    FQDN = 'https://telemediaspeed.herokuapp.com'#str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
     URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
         "http://{}:{}/".format(FQDN, PORT)
     DATABASE_URL = 'mongodb+srv://yossi7229:Cc200200!@cluster0.vvxkqcq.mongodb.net'#str(getenv('DATABASE_URL'))
