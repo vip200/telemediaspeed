@@ -16,7 +16,7 @@ class Var(object):
     BIN_CHANNEL = -1001497492623
     PORT = int(getenv('PORT', 8080))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-    OWNER_ID = int(getenv('OWNER_ID', '384403734'))
+    OWNER_ID = 384403734#int(getenv('OWNER_ID', '384403734'))
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
     OWNER_USERNAME = 'https://t.me/xbmc19'
@@ -30,4 +30,4 @@ class Var(object):
         "http://{}:{}/".format(FQDN, PORT)
     DATABASE_URL = 'mongodb+srv://yossi7229:Cc200200!@cluster0.vvxkqcq.mongodb.net'#str(getenv('DATABASE_URL'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
-    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001497492623")).split()))
+    BANNED_CHANNELS = -1001712885478#list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001712885478")).split()))
