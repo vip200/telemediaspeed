@@ -30,4 +30,4 @@ class Var(object):
         "http://{}:{}/".format(FQDN, PORT)
     DATABASE_URL = 'mongodb+srv://yossi7229:Cc200200!@cluster0.vvxkqcq.mongodb.net'#str(getenv('DATABASE_URL'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
-    BANNED_CHANNELS = '-1001712885478'#list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001712885478")).split()))
+    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001712885478")).split()))
