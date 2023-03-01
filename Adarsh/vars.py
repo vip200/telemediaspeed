@@ -25,7 +25,7 @@ class Var(object):
         APP_NAME = 'telemediaspeed'
     else:
         ON_HEROKU = False
-    FQDN = 'https://telemediaspeed.herokuapp.com'#str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
+    FQDN = 'telemediaspeed.herokuapp.com'#str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
     URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
         "http://{}:{}/".format(FQDN, PORT)
     DATABASE_URL = 'mongodb+srv://yossi7229:Cc200200!@cluster0.vvxkqcq.mongodb.net'#str(getenv('DATABASE_URL'))
